@@ -15,5 +15,7 @@ test("direct bin can print to stdout and count to 4", () => {
 });
 
 test("npx can print to stdout and count to 9", () => {
-  expect(shell.exec("npx binary-install-example -ccccccccc").stdout).toContain("9");
-})
+  expect(shell.exec("npx binary-install-example -ccccccccc").stdout).toContain(
+    "9"
+  );
+});

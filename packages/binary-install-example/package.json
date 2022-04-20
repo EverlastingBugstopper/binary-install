@@ -2,7 +2,6 @@
   "name": "binary-install-example",
   "version": "1.0.0",
   "description": "An example package for binary-install",
-  "main": "run.js",
   "private": true,
   "scripts": {
     "test": "jest",

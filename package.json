@@ -5,8 +5,8 @@
     "postinstall": "lerna bootstrap --hoist",
     "clean": "lerna clean && rm -rf node_modules",
     "test": "lerna run test",
-    "fmt": "prettier --write **/*.js",
-    "fmt:check": "prettier --check **/*.js"
+    "fmt": "prettier --write **/**/*.js",
+    "fmt:check": "prettier --check **/**/*.js"
   },
   "devDependencies": {
     "lerna": "^3.20.2",

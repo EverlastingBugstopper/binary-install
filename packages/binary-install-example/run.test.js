@@ -4,12 +4,7 @@ const shell = require("shelljs");
 
 const projectRoot = path.dirname(require.resolve("./package.json"));
 const projectName = require("./package.json").name;
-const bin = path.join(
-  projectRoot,
-  "node_modules",
-  ".bin",
-  projectName
-);
+const bin = path.join(projectRoot, "node_modules", ".bin", projectName);
 
 test("it's installed", () => {
   expect(fs.existsSync(bin)).toBe(true);

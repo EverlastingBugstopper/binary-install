@@ -62,7 +62,13 @@ class Binary {
 
     return axios({ ...fetchOptions, url: this.url, responseType: "stream" })
       .then(res => {
-        res.data.pipe(tar.x({ strip: 1, C: this.installDirectory }));
+        return new Promise((resolve, reject) => {
+          const sink = res.data.pipe(
+            tar.x({ strip: 1, C: this.installDirectory })
+          );
+          sink.on("finish", () => resolve());
+          sink.on("error", err => reject(err));
+        });
       })
       .then(() => {
         console.log(`${this.name} has been installed!`);

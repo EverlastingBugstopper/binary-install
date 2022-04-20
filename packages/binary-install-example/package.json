@@ -2,15 +2,11 @@
   "name": "binary-install-example",
   "version": "1.0.0",
   "description": "An example package for binary-install",
-  "main": "binary.js",
+  "main": "run.js",
   "private": true,
-  "bin": {
-    "binary-install-example": "./run.js"
-  },
   "scripts": {
-    "postinstall": "node ./install.js",
-    "fmt": "prettier --write **/*.js",
-    "fmt:check": "prettier --check **/*.js"
+    "test": "jest",
+    "postinstall": "node ./install.js"
   },
   "repository": {
     "type": "git",
@@ -23,10 +19,12 @@
   },
   "homepage": "https://github.com/EverlastingBugstopper/binary-install#readme",
   "dependencies": {
-    "binary-install": "^0.1.0",
     "console.table": "^0.10.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "jest": "^27.5.1",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5"
   }
 }

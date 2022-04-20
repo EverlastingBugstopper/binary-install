@@ -2,13 +2,17 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "clean": "lerna clean",
+    "postinstall": "lerna bootstrap --hoist",
+    "clean": "lerna clean && rm -rf node_modules",
     "test": "lerna run test",
-    "fmt": "lerna run fmt",
-    "fmt:check": "lerna run fmt:check"
+    "fmt": "prettier --write **/*.js",
+    "fmt:check": "prettier --check **/*.js"
   },
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1"
+  },
+  "volta": {
+    "node": "16.14.2"
   }
 }

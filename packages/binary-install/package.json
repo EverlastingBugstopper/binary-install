@@ -3,10 +3,6 @@
   "version": "0.1.1",
   "description": "Install binary applications via npm",
   "main": "./index.js",
-  "scripts": {
-    "fmt": "prettier --write **/*.js",
-    "fmt:check": "prettier --check **/*.js"
-  },
   "engines": {
     "node": ">=10"
   },
@@ -25,9 +21,6 @@
     "url": "https://github.com/EverlastingBugstopper/binary-install/issues"
   },
   "homepage": "https://github.com/EverlastingBugstopper/binary-install#readme",
-  "devDependencies": {
-    "prettier": "^1.19.1"
-  },
   "dependencies": {
     "axios": "^0.21.1",
     "rimraf": "^3.0.2",

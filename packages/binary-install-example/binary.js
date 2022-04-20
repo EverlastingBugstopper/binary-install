@@ -6,7 +6,7 @@
 // to construct said URL. You could even A/B test two different binary distribution
 // solutions!
 
-const { Binary } = require("binary-install");
+const { Binary } = require("../binary-install");
 const os = require("os");
 const cTable = require("console.table");
 
@@ -42,8 +42,7 @@ const getPlatformMetadata = () => {
   const type = os.type();
   const architecture = os.arch();
 
-  for (let index in supportedPlatforms) {
-    let supportedPlatform = supportedPlatforms[index];
+  for (let supportedPlatform of supportedPlatforms) {
     if (
       type === supportedPlatform.TYPE &&
       architecture === supportedPlatform.ARCHITECTURE

@@ -1,6 +1,6 @@
 {
   "name": "binary-install",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Install binary applications via npm",
   "main": "./index.js",
   "engines": {
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/EverlastingBugstopper/binary-install#readme",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.26.1",
     "rimraf": "^3.0.2",
-    "tar": "^6.1.0"
+    "tar": "^6.1.11"
   }
 }

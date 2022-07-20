@@ -51,7 +51,16 @@ class Binary {
     this.binaryPath = join(this.installDirectory, this.name);
   }
 
+  exists() {
+    return existsSync(this.binaryPath);
+  }
+
   install(fetchOptions) {
+    if (this.exists()) {
+      console.debug(`${this.name} is already installed, skipping installation.`);
+      return Promise.resolve();
+    }
+
     if (existsSync(this.installDirectory)) {
       rimraf.sync(this.installDirectory);
     }

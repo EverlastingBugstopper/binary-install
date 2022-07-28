@@ -57,7 +57,7 @@ class Binary {
 
   install(fetchOptions) {
     if (this.exists()) {
-      console.debug(
+      console.error(
         `${this.name} is already installed, skipping installation.`
       );
       return Promise.resolve();
@@ -69,7 +69,7 @@ class Binary {
 
     mkdirSync(this.installDirectory, { recursive: true });
 
-    console.log(`Downloading release from ${this.url}`);
+    console.error(`Downloading release from ${this.url}`);
 
     return axios({ ...fetchOptions, url: this.url, responseType: "stream" })
       .then(res => {
@@ -82,7 +82,7 @@ class Binary {
         });
       })
       .then(() => {
-        console.log(`${this.name} has been installed!`);
+        console.error(`${this.name} has been installed!`);
       })
       .catch(e => {
         error(`Error fetching release: ${e.message}`);

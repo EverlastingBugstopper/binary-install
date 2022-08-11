@@ -97,7 +97,7 @@ class Binary {
 
   run(fetchOptions) {
     if (!this.exists()) {
-      this.install(fetchOptions, true)
+      this.install(fetchOptions, true);
     }
 
     const [, , ...args] = process.argv;

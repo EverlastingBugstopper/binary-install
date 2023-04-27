@@ -96,21 +96,25 @@ class Binary {
   }
 
   run(fetchOptions) {
-    if (!this.exists()) {
-      this.install(fetchOptions, true)
-    }
+    const promise = !this.exists() ? this.install(fetchOptions, true) : Promise.resolve();
 
-    const [, , ...args] = process.argv;
+    promise.then(() => {
+      const [, , ...args] = process.argv;
 
-    const options = { cwd: process.cwd(), stdio: "inherit" };
+      const options = { cwd: process.cwd(), stdio: "inherit" };
 
-    const result = spawnSync(this.binaryPath, args, options);
+      const result = spawnSync(this.binaryPath, args, options);
 
-    if (result.error) {
-      error(result.error);
-    }
+      if (result.error) {
+        error(result.error);
+      }
 
-    process.exit(result.status);
+      process.exit(result.status);
+
+    }).catch(() => {
+      process.exit(1);
+    })
+    
   }
 }
 

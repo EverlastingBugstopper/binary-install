@@ -12,7 +12,7 @@ const error = msg => {
 };
 
 class Binary {
-  constructor(name, url) {
+  constructor(name, url, config) {
     let errors = [];
     if (typeof url !== "string") {
       errors.push("url must be a string");
@@ -42,7 +42,7 @@ class Binary {
     }
     this.url = url;
     this.name = name;
-    this.installDirectory = join(__dirname, "node_modules", ".bin");
+    this.installDirectory = config?.installDirectory || join(__dirname, "node_modules", ".bin");
 
     if (!existsSync(this.installDirectory)) {
       mkdirSync(this.installDirectory, { recursive: true });

@@ -8,6 +8,7 @@
 
 const { Binary } = require("../binary-install");
 const os = require("os");
+const { join } = require("path");
 const cTable = require("console.table");
 
 const error = msg => {
@@ -69,7 +70,9 @@ const getBinary = () => {
   // the url for this binary is constructed from values in `package.json`
   // https://github.com/EverlastingBugstopper/binary-install/releases/download/v1.0.0/binary-install-example-v1.0.0-x86_64-apple-darwin.tar.gz
   const url = `${repository.url}/releases/download/rust_v${version}/${name}-v${version}-${platformMetadata.RUST_TARGET}.tar.gz`;
-  return new Binary(platformMetadata.BINARY_NAME, url);
+  return new Binary(platformMetadata.BINARY_NAME, url, {
+    installDirectory: join(__dirname, "node_modules", ".bin")
+  });
 };
 
 const run = () => {

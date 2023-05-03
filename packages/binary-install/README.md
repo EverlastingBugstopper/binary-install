@@ -81,6 +81,16 @@ Unfortunately, it's never quite as simple as the above example. You likely want 
 
 Any arguments you pass to the `install()` method will be [used to configure Axios](https://axios-http.com/docs/api_intro) when downloading the binary. This is useful for downloading from a private repo when you have to set an `Authorization` header or if you need to do weird things like issue a `POST` instead of a `GET` to retrieve your binary from some endpoint.
 
+#### Overriding the base install directory
+
+You may want to override the base installation directory. To do so, you can pass a third parameter to the `Binary` constructor to specify `installDirectory`, like so:
+
+```javascript
+  return new Binary("my-binary", "https://example.com/my-binary/macos-arm/v1.0.0.tar.gz", {
+    installDirectory: join(__dirname, ".my-custom-binary-location")
+  });
+```
+
 ### Distribution
 
 Now that you have cross-platform downloads working, it's time to distribute your tool! You should [publish your package](https://docs.npmjs.com/cli/v8/commands/npm-publish) to npm just like normal, and then you should document how to install your tool for your end users. There are generally two approaches you can take to do this.

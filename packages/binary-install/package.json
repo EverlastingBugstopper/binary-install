@@ -15,6 +15,10 @@
     "binary",
     "global"
   ],
+  "scripts": {
+    "fmt": "prettier --write **/*.js",
+    "fmt:check": "prettier --check **/*.js"
+  },
   "author": "Avery Harnish <averyharnish@gmail.com>",
   "license": "MIT",
   "bugs": {

@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "postinstall": "node ./install.js"
+    "postinstall": "node ./install.js",
+    "fmt": "prettier --write **/*.js",
+    "fmt:check": "prettier --check **/*.js"
   },
   "repository": {
     "type": "git",

@@ -30,5 +30,3 @@ jobs:
       - name: Check Rust Formatting
         working-directory: ./example-binary
         run: cargo fmt -- --check
-        
-

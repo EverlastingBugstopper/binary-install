@@ -35,6 +35,12 @@ const supportedPlatforms = [
     ARCHITECTURE: "x64",
     RUST_TARGET: "x86_64-apple-darwin",
     BINARY_NAME: "binary-install-example"
+  },
+  {
+    TYPE: "Darwin",
+    ARCHITECTURE: "arm64",
+    RUST_TARGET: "x86_64-apple-darwin",
+    BINARY_NAME: "binary-install-example"
   }
 ];
 

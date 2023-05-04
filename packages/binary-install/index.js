@@ -111,7 +111,8 @@ class Binary {
 
       process.exit(result.status);
 
-    }).catch(() => {
+    }).catch((e) => {
+      error(e.message);
       process.exit(1);
     })
     

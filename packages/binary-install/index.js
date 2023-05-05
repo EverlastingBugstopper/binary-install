@@ -60,7 +60,7 @@ class Binary {
     if (this.exists()) {
       if (!suppressLogs) {
         console.error(
-          `${this.name} is already installed, skipping installation.`
+          `${this.name} is already installed at ${this.binaryPath}, skipping installation.`
         );
       }
       return Promise.resolve();

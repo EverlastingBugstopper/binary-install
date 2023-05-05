@@ -15,6 +15,9 @@
     "binary",
     "global"
   ],
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
   "author": "Avery Harnish <averyharnish@gmail.com>",
   "license": "MIT",
   "bugs": {

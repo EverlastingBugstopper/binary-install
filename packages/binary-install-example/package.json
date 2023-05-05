@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "postinstall": "node ./install.js"
+    "postinstall": "node ./install.js",
+    "clean": "rm -rf ./node_modules"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,13 @@
   "dependencies": {
     "console.table": "^0.10.0"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/globalJest.js"
+    ]
+  },
   "devDependencies": {
-    "jest": "^27.5.1",
+    "jest": "^29.5.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5"

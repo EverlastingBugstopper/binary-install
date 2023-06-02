@@ -39,7 +39,11 @@ class Binary {
       errors.push("You must specify the version of your binary");
     }
 
-    if (config && config.installDirectory && typeof config.installDirectory !== "string") {
+    if (
+      config &&
+      config.installDirectory &&
+      typeof config.installDirectory !== "string"
+    ) {
       errors.push("config.installDirectory must be a string");
     }
 
@@ -63,7 +67,10 @@ class Binary {
       mkdirSync(this.installDirectory, { recursive: true });
     }
 
-    this.binaryPath = join(this.installDirectory, `${this.name}-${this.version}`);
+    this.binaryPath = join(
+      this.installDirectory,
+      `${this.name}-${this.version}`
+    );
   }
 
   exists() {

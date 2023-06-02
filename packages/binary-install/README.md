@@ -83,7 +83,7 @@ Any arguments you pass to the `install()` method will be [used to configure Axio
 
 #### Overriding the base install directory
 
-You may want to override the base installation directory. To do so, you can pass a third parameter to the `Binary` constructor to specify `installDirectory`, like so:
+You may want to override the base installation directory. To do so, you can pass a fourth parameter to the `Binary` constructor to specify `installDirectory`, like so:
 
 ```javascript
   return new Binary("my-binary", "https://example.com/my-binary/macos-arm/v1.0.0.tar.gz", "v1.0.0", {

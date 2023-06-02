@@ -26,7 +26,7 @@ You could create an `install.js` file that looks something like this:
 #!/usr/bin/env node
 
 const { Binary } = require("binary-install");
-let binary = new Binary('my-binary', 'https://example.com/binary/tar.gz')
+let binary = new Binary('my-binary', 'https://example.com/binary/tar.gz', 'v1.0.0')
 binary.install();
 ```
 
@@ -57,7 +57,7 @@ You need one more thing before your package is ready to distribute. Make a `run.
 #!/usr/bin/env node
 
 const { Binary } = require("binary-install");
-let binary = new Binary('my-binary', 'https://example.com/binary/tar.gz')
+let binary = new Binary('my-binary', 'https://example.com/binary/tar.gz', 'v1.0.0')
 binary.run();
 ```
 
@@ -86,7 +86,7 @@ Any arguments you pass to the `install()` method will be [used to configure Axio
 You may want to override the base installation directory. To do so, you can pass a third parameter to the `Binary` constructor to specify `installDirectory`, like so:
 
 ```javascript
-  return new Binary("my-binary", "https://example.com/my-binary/macos-arm/v1.0.0.tar.gz", {
+  return new Binary("my-binary", "https://example.com/my-binary/macos-arm/v1.0.0.tar.gz", "v1.0.0", {
     installDirectory: join(__dirname, ".my-custom-binary-location")
   });
 ```

@@ -12,7 +12,7 @@ const error = msg => {
 };
 
 class Binary {
-  constructor(name, url, config) {
+  constructor(name, url, version, config) {
     let errors = [];
     if (typeof url !== "string") {
       errors.push("url must be a string");
@@ -27,9 +27,22 @@ class Binary {
       errors.push("name must be a string");
     }
 
+    if (version && typeof version !== "string") {
+      errors.push("version must be a string");
+    }
+
     if (!name) {
       errors.push("You must specify the name of your binary");
     }
+
+    if (!version) {
+      errors.push("You must specify the version of your binary");
+    }
+
+    if (config && config.installDirectory && typeof config.installDirectory !== "string") {
+      errors.push("config.installDirectory must be a string");
+    }
+
     if (errors.length > 0) {
       let errorMsg =
         "One or more of the parameters you passed to the Binary constructor are invalid:\n";
@@ -37,11 +50,12 @@ class Binary {
         errorMsg += error;
       });
       errorMsg +=
-        '\n\nCorrect usage: new Binary("my-binary", "https://example.com/binary/download.tar.gz")';
+        '\n\nCorrect usage: new Binary("my-binary", "https://example.com/binary/download.tar.gz", "v1.0.0")';
       error(errorMsg);
     }
     this.url = url;
     this.name = name;
+    this.version = version;
     this.installDirectory =
       config?.installDirectory || join(__dirname, "node_modules", ".bin");
 
@@ -49,7 +63,7 @@ class Binary {
       mkdirSync(this.installDirectory, { recursive: true });
     }
 
-    this.binaryPath = join(this.installDirectory, this.name);
+    this.binaryPath = join(this.installDirectory, `${this.name}-${this.version}`);
   }
 
   exists() {

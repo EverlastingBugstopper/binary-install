@@ -1,3 +1,5 @@
+> This project has been archived. If you would like to claim ownership of the [`binary-install`](https://www.npmjs.com/package/binary-install) package on npm, please email me at `npm@averyharnish.com`.
+
 # 🦀 `binary-install` monorepo
 
 This repository contains two JavaScript packages orchestrated by Lerna, located in `./packages`, and an example Rust binary in `./example-binary`.
@@ -15,10 +17,6 @@ This package is used to test `binary-install` and to show an example of a projec
 ### `./example-binary`
 
 This is a Rust package that simply takes some `-c` arguments, counts how many you passed, and prints the result to `stdout`. New versions can be automatically published to GitHub releases with the GitHub Actions workflows in this repository.
-
-## Maintenance
-
-This project is maintained by me when I have time. This project has been built for my needs and my needs only, and I do not provide any guarantees on response time to issues or PRs. Not saying I won't accept contributions, they just may take a bit of time to see the light of day.
 
 ## CI
 

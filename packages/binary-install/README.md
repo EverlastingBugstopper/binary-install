@@ -1,3 +1,5 @@
+> This project has been archived. If you would like to claim ownership of the [`binary-install`](https://www.npmjs.com/package/binary-install) package on npm, please email me at `npm@averyharnish.com`.
+
 # 🦀 `binary-install`
 
 Install .tar.gz binary applications via npm

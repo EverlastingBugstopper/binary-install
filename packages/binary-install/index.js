@@ -4,7 +4,7 @@ const { spawnSync } = require("child_process");
 
 const axios = require("axios");
 const tar = require("tar");
-const rimraf = require("rimraf");
+const { rimraf } = require("rimraf");
 
 const error = msg => {
   console.error(msg);
